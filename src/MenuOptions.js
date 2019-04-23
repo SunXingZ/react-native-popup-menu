@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { View } from 'react-native';
+import { ScrollView } from 'react-native';
 import { withCtx } from './MenuProvider';
 
 export class MenuOptions extends React.Component {
@@ -25,9 +25,9 @@ export class MenuOptions extends React.Component {
   render() {
     const { customStyles, style, children } = this.props
     return (
-      <View style={[customStyles.optionsWrapper, style]}>
+      <ScrollView style={[customStyles.optionsWrapper, style]}>
         {children}
-      </View>
+      </ScrollView>
     )
   }
 }
