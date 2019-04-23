@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ScrollView } from 'react-native';
+import { ScrollView, Dimensions } from 'react-native';
 import { withCtx } from './MenuProvider';
+
+const { width, height } = Dimensions.get("screen");
 
 export class MenuOptions extends React.Component {
 
@@ -25,7 +27,7 @@ export class MenuOptions extends React.Component {
   render() {
     const { customStyles, style, children } = this.props
     return (
-      <ScrollView style={[customStyles.optionsWrapper, style]}>
+      <ScrollView style={[customStyles.optionsWrapper, style, { maxHeight: height * 0.5 }]}>
         {children}
       </ScrollView>
     )
